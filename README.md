@@ -1,6 +1,6 @@
 # cli-calculator
 
-This project implements basic funtionalities of a calculator. It can be run in any terminal. 
+This project implements basic funtionalities of a calculator. It can be run in terminal. 
 
 This calculator has four operations. They are :
 

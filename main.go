@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+// FIXME: if you enter '5' as the operationChoice the program goes ahead.
+// FIXME: if you do multiple operation it doesn't calculate properly
+// FIXME: handle the goodness of the user's values. "d" is not a valid input here.
+// FIXME: use module awareness. This means that you've to initialize a Go module.
+// FIXME: move the calculation logic into another pkg.
+
 func main() {
 	// declaring variables
 	var operationChoice int
@@ -49,6 +55,7 @@ func main() {
 
 		// controling loop: whether to continue or break out of it
 		fmt.Print("To continue enter 0, otherwise 1 to quit: ")
+		// FIXME: in Go 'flag' is something passed in when you invoke the program (e.g. "go run . -value1"). Here "value1" is the flag's value. Change name properly
 		fmt.Scan(&flag)
 		if flag == 1 {
 			break
@@ -60,5 +67,4 @@ func main() {
 		}
 
 	}
-
 }

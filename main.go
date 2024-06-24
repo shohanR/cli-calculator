@@ -1,15 +1,15 @@
-// FIXME: if you enter '5' as the operationChoice the program goes ahead.
+// FIXME: if you enter 'abc' as the operationChoice the program goes ahead.
 // FIXME: if you do multiple operation it doesn't calculate properly
 // FIXME: handle the goodness of the user's values. "d" is not a valid input here.
-// FIXME: use module awareness. This means that you've to initialize a Go module.
-// FIXME: move the calculation logic into another pkg.
+// FIXME: decrease spacing since the lines are far from each other.
 
 package main
 
 import (
-	"cli/calculation"
 	"fmt"
 	"os"
+
+	"cli/calculation"
 )
 
 func main() {

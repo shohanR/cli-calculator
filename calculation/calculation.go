@@ -1,8 +1,3 @@
-// TakeNumbers takes input from the user
-// [Q]: why are you passing "num" as a parameter? What's the purpose?
-// FIXME: this function has nothing to do with the calculation. Could be moved in another pkg (something like "utils") or put as a function in the main.go file.
-// BUG: handle conversion between strings and float64 values
-
 package calculation
 
 // Add performs addition

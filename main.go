@@ -1,19 +1,20 @@
-// FIXME: if you enter 'abc' as the operationChoice the program goes ahead.
-// FIXME: if you do multiple operation it doesn't calculate properly
 // FIXME: handle the goodness of the user's values. "d" is not a valid input here.
-// FIXME: decrease spacing since the lines are far from each other.
+// TODO: let's do only one operation at time. Every time you want to perform an operation asks for all the data you need. NO OPERATION ON THE PREVIOUS OPERATION'S RESULT.
 package main
 
 import (
-	"cli-calculator/calculation"
-	"cli-calculator/utils"
 	"fmt"
 	"os"
 	"strconv"
+
+	"cli-calculator/calculation"
+	"cli-calculator/utils"
 )
 
+// TODO: try to remove logic from the main() since it's too much bloated with logic, checks, and so on.
 func main() {
 	var result float64 = 0
+	// TODO: "checker" identifier is not meaningful. What's its purpose?
 	checker := 0
 
 	fmt.Println("\nWelcome to the GO CLI Calculator. Following are the options:")
@@ -79,5 +80,4 @@ func main() {
 		fmt.Println("The result is : ", result)
 		checker++
 	}
-
 }

@@ -1,8 +1,8 @@
 package utils
 
 import (
+	"errors"
 	"fmt"
-	"os"
 	"strconv"
 )
 
@@ -11,37 +11,36 @@ import (
 // 1. "0" means success. You're using it in a failure scenario.
 // 2. It's the caller of this function that should handle the error returned by this function. It's
 // not is duty to halt the program.
-func TakeNumbers(result float64, checker int) (float64, float64) {
+func TakeNumbers() (float64, float64, error) {
 	var num1str, num2str string
 	var num1, num2 float64
 
-	if result == 0 || checker == 0 {
-		fmt.Print("Enter first number: ")
-		fmt.Scan(&num1str)
-		var err error
-		num1, err = strconv.ParseFloat(num1str, 64)
-		if err != nil {
-			fmt.Println("Error! Invalid input")
-			os.Exit(0)
-		}
-
-		fmt.Print("Enter second number: ")
-		fmt.Scan(&num2str)
-		num2, err = strconv.ParseFloat(num2str, 64)
-		if err != nil {
-			fmt.Println("Invalid input!")
-			os.Exit(0)
-		}
-	} else {
-		num1 = result
-		fmt.Print("Enter next number: ")
-		fmt.Scan(&num2str)
-		var err error
-		num2, err = strconv.ParseFloat(num2str, 64)
-		if err != nil {
-			fmt.Println("Error! Invalid input!")
-			os.Exit(0)
-		}
+	fmt.Print("Enter first number: ")
+	fmt.Scan(&num1str)
+	var err error
+	num1, err = strconv.ParseFloat(num1str, 64)
+	if err != nil {
+		return 0, 0, errors.New("Error! Invalid input for first number!")
 	}
-	return num1, num2
+
+	fmt.Print("Enter second number: ")
+	fmt.Scan(&num2str)
+	num2, err = strconv.ParseFloat(num2str, 64)
+	if err != nil {
+		return 0, 0, errors.New("Error! Invalid input for second number!")
+	}
+	return num1, num2, nil
+}
+
+func GetoperationInput() (int, error) {
+	var operationChoice string
+	fmt.Print("\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. End\n")
+	fmt.Print("Enter operation: ")
+	fmt.Scan(&operationChoice)
+
+	opChoiceInt, err := strconv.Atoi(operationChoice)
+	if err != nil || opChoiceInt < 1 || opChoiceInt > 5 {
+		return 0, errors.New("Invalid input!")
+	}
+	return opChoiceInt, nil
 }

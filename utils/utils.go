@@ -3,6 +3,7 @@ package utils
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 )
 
@@ -20,14 +21,14 @@ func TakeNumbers() (float64, float64, error) {
 	var err error
 	num1, err = strconv.ParseFloat(num1str, 64)
 	if err != nil {
-		return 0, 0, errors.New("Error! Invalid input for first number!")
+		return 0, 0, errors.New("error! Invalid input for first number")
 	}
 
 	fmt.Print("Enter second number: ")
 	fmt.Scan(&num2str)
 	num2, err = strconv.ParseFloat(num2str, 64)
 	if err != nil {
-		return 0, 0, errors.New("Error! Invalid input for second number!")
+		return 0, 0, errors.New("error! Invalid input for second number")
 	}
 	return num1, num2, nil
 }
@@ -40,7 +41,17 @@ func GetoperationInput() (int, error) {
 
 	opChoiceInt, err := strconv.Atoi(operationChoice)
 	if err != nil || opChoiceInt < 1 || opChoiceInt > 5 {
-		return 0, errors.New("Invalid input!")
+		return 0, errors.New("invalid input")
 	}
 	return opChoiceInt, nil
+}
+
+func HistoryPrinter(history []string) {
+	if len(history) > 0 {
+		for indexNum, indexVal := range history {
+			fmt.Println(indexNum+1, ". ", indexVal)
+		}
+	}
+	fmt.Println("\n\nTerminating calculator!...Goodbye!")
+	os.Exit(0)
 }

@@ -11,6 +11,8 @@ This calculator has four operations. They are :
 
 ## How to run
 
+<!-- TODO: add steps to build the software and run it without Go. -->
+
 ***1. Clone the repository:***
 
     git clone https://github.com/shohanR/cli-calculator.git

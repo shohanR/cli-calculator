@@ -12,6 +12,7 @@ import (
 // 1. "0" means success. You're using it in a failure scenario.
 // 2. It's the caller of this function that should handle the error returned by this function. It's
 // not is duty to halt the program.
+// FIXME: if you put a wrong number as a second value, it will ask you also the first one.
 func TakeNumbers() (float64, float64, error) {
 	var num1str, num2str string
 	var num1, num2 float64
@@ -46,12 +47,16 @@ func GetoperationInput() (int, error) {
 	return opChoiceInt, nil
 }
 
+// FIXME: this function should be moved to another file
+// FIXME: it prints 4/0=undefined that should not be printed.
 func HistoryPrinter(history []string) {
+	// FIXME: this check is useless since it doesn't give you an error if we don't have any element
 	if len(history) > 0 {
 		for indexNum, indexVal := range history {
 			fmt.Println(indexNum+1, ". ", indexVal)
 		}
 	}
+	// TODO: print the history without closing the calculator. The function name is "HistoryPrinter" so it doesn't have to close the whole program
 	fmt.Println("\n\nTerminating calculator!...Goodbye!")
 	os.Exit(0)
 }

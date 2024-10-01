@@ -3,26 +3,27 @@
 package main
 
 import (
+	"fmt"
+
 	"cli-calculator/calculation"
 	"cli-calculator/utils"
-	"fmt"
 )
 
 // TODO: try to remove logic from the main() since it's too much bloated with logic, checks, and so on.
 func main() {
 	var history []string
-	// TODO: "checker" identifier is not meaningful. What's its purpose?
 	fmt.Println("\nWelcome to the GO CLI Calculator. Following are the options:")
 	for {
-		var operationChoice, err = utils.GetoperationInput()
+		operationChoice, err := utils.GetoperationInput()
 		if err != nil {
 			fmt.Println(err, " Please enter a number between 1 and 5")
 			continue
 		}
+		// TODO: if no operations have been made, say something like "No operations done..." to the user.
 		if operationChoice == 5 {
 			utils.HistoryPrinter(history)
 		}
-		var result, zeroDev, tempHistory = GetoperationCalculation(operationChoice)
+		result, zeroDev, tempHistory := GetoperationCalculation(operationChoice)
 		if zeroDev == 1 {
 			fmt.Println("\nThe result is :undefined!")
 		} else {
@@ -62,6 +63,7 @@ func GetoperationCalculation(opChoiceInt int) (float64, int, string) {
 				result = calculation.Div(number1, number2)
 			}
 
+			// FIXME: move this check away from here.
 			if opChoiceInt == 4 && number2 == 0 {
 				history = fmt.Sprintf("%v", number1) + operatorSign + fmt.Sprintf("%v", number2) + " = undefined"
 			} else {

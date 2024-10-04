@@ -3,7 +3,6 @@ package utils
 import (
 	"errors"
 	"fmt"
-	"os"
 	"strconv"
 )
 
@@ -45,18 +44,4 @@ func GetoperationInput() (int, error) {
 		return 0, errors.New("invalid input")
 	}
 	return opChoiceInt, nil
-}
-
-// FIXME: this function should be moved to another file
-// FIXME: it prints 4/0=undefined that should not be printed.
-func HistoryPrinter(history []string) {
-	// FIXME: this check is useless since it doesn't give you an error if we don't have any element
-	if len(history) > 0 {
-		for indexNum, indexVal := range history {
-			fmt.Println(indexNum+1, ". ", indexVal)
-		}
-	}
-	// TODO: print the history without closing the calculator. The function name is "HistoryPrinter" so it doesn't have to close the whole program
-	fmt.Println("\n\nTerminating calculator!...Goodbye!")
-	os.Exit(0)
 }

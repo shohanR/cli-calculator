@@ -18,8 +18,5 @@ func Mul(num1, num2 float64) float64 {
 // Div performs division
 // FIXME: return an error if the second number is 0
 func Div(num1, num2 float64) float64 {
-	if num2 == 0 {
-		return 0
-	}
 	return num1 / num2
 }

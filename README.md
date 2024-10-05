@@ -68,11 +68,11 @@ Once the binary is built, transfer it to the target machine where Go is not inst
 
 - On **Linux** or **macOS**:
 
-    ./cli-calculator
+        ./cli-calculator
 
 - On **Windows**
 
-    cli-calculator.exe
+        cli-calculator.exe
 
 ***5. Cross-Compiling for Other Platforms***
 
@@ -80,15 +80,15 @@ If you need to build the binary for a different platform, you can cross-compile 
 
 - To build for **Linux**:
 
-    GOOS=linux GOARCH=amd64 go build -o cli-calculator-linux
+        GOOS=linux GOARCH=amd64 go build -o cli-calculator-linux
 
 - To build for **Windows**:
 
-    GOOS=windows GOARCH=amd64 go build -o cli-calculator.exe
+        GOOS=windows GOARCH=amd64 go build -o cli-calculator.exe
 
 - To build for **macOS**:
 
-    GOOS=darwin GOARCH=amd64 go build -o cli-calculator-mac
+        GOOS=darwin GOARCH=amd64 go build -o cli-calculator-mac
 
 Transfer the corresponding binary to the target platform and run it as described in Step 4.
 

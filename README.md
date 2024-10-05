@@ -95,7 +95,7 @@ Transfer the corresponding binary to the target platform and run it as described
 
 ## License
 
-This project is licensed under the MIT License. See the **LICENSE** file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/shohanR/cli-calculator/blob/main/LICENSE) file for details.
 
 
 ## New Features

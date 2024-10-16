@@ -9,17 +9,13 @@ This calculator supports the following operations :
 3. Multiplication
 4. Division
 
-
 ## Features
 
 - The user can perform basic arithmetic operations.
 - The calculator supports multiple operations during the session.
 - At the end of the session, all valid operations performed will be displayed to the user.
 
-
 ## How to run
-
-<!-- TODO: add steps to build the software and run it without Go. -->
 
 ### Prerequisites
 
@@ -92,11 +88,9 @@ If you need to build the binary for a different platform, you can cross-compile 
 
 Transfer the corresponding binary to the target platform and run it as described in Step 4.
 
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/shohanR/cli-calculator/blob/main/LICENSE) file for details.
-
 
 ## New Features
 

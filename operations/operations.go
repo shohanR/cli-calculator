@@ -1,11 +1,14 @@
 package operations
 
 import (
+	"fmt"
+
 	"cli-calculator/calculation"
 	"cli-calculator/utils"
-	"fmt"
 )
 
+// FIXME: documentation comments to all the exported functions. They should do only a certain thing.
+// https://medium.com/@radhakrishnan.nit/single-responsibility-principle-in-golang-89a4a75f6fc4
 func GetoperationCalculation(opChoiceInt int) (float64, int, string) {
 	for {
 		var number1, number2, result float64

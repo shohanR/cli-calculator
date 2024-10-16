@@ -7,10 +7,6 @@ import (
 )
 
 // takeNumbers is a utility function to take input numbers from the user.
-// BUG: os.Exit(0) is wrong due to the following:
-// 1. "0" means success. You're using it in a failure scenario.
-// 2. It's the caller of this function that should handle the error returned by this function. It's
-// not is duty to halt the program.
 // FIXME: if you put a wrong number as a second value, it will ask you also the first one.
 func TakeNumbers() (float64, float64, error) {
 	var num1str, num2str string
